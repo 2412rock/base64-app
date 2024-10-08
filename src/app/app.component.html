@@ -1,3 +1,11 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<div class="container">
+  <label for="textInput">Enter a string:</label>
+  <input id="textInput" [(ngModel)]="inputText" placeholder="Type something..." />
+
+  <button (click)="convertToBase64()">Convert to Base64</button>
+
+  <div *ngIf="base64Result">
+    <p><strong>Base64 Result:</strong> {{ base64Result }}</p>
+    <button (click)="copyToClipboard()">Copy to Clipboard</button>
+  </div>
+</div>
